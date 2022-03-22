@@ -14,7 +14,7 @@ class PackageProvider extends ServiceProvider
     public function register()
     {
       //  $this->mergeConfigFrom(__DIR__.'/../config/config.php', 'packageprovider');
-        $this->app->make('\PackageProvider');
+        $this->app->make('\PackageUserLaravel\PackageProvider');
     }
 
     /**
@@ -38,6 +38,12 @@ class PackageProvider extends ServiceProvider
 
       $this->publishes([
         __DIR__.'/views' => base_path('src/views'),
+      ]);
+      $this->publishes([
+        __DIR__.'/Controllers' => app_path('Http/Controllers')
+      ]);
+      $this->publishes([
+        __DIR__.'/Models' => app_path('Http/Models')
       ]);
 
       /*$this->publishes([

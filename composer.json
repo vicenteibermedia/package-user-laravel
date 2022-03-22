@@ -1,0 +1,28 @@
+{
+    "name": "danielgarcia/package-user",
+    "description": "Package users",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+      {
+        "name": "Daniel Garcia",
+        "email": "dgfja06@gmail.com"
+      }
+    ],
+
+    "autoload": {
+      "psr-4": {
+        "DanielGarcia\\PackageUser\\": "src/"
+      }
+    },
+    "extra": {
+      "laravel:" {
+        "providers": [
+          "DanielGarcia\\PackageUser\\PackageProvider"
+        ]
+      
+    },
+
+    "minimum-stability": "dev",
+    "require": {}
+}

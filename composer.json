@@ -12,15 +12,15 @@
 
     "autoload": {
       "psr-4": {
-        "DanielGarcia\\PackageUser\\": "src/"
+        "DanielGarcia\\PackageUser\\PackageUserLaravel\\": "packageuserlaravel/src/"
       }
     },
     "extra": {
       "laravel:" {
         "providers": [
-          "DanielGarcia\\PackageUser\\PackageProvider"
+          "DanielGarcia\\PackageUser\\PackageUserLaravel\\PackageProvider"
         ]
-      
+
     },
 
     "minimum-stability": "dev",

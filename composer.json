@@ -16,13 +16,12 @@
       }
     },
     "extra": {
-      "laravel:" {
+      "laravel": {
         "providers": [
           "DanielGarcia\\PackageUser\\PackageUserLaravel\\PackageProvider"
         ]
-
+      }
     },
-
     "minimum-stability": "dev",
     "require": {}
 }

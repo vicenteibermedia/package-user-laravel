@@ -12,13 +12,13 @@
 
     "autoload": {
       "psr-4": {
-        "DanielGarcia\\PackageUser\\PackageUserLaravel\\": "src/"
+        "Danielgarcia\\PackageUser\\PackageUserLaravel\\": "src/"
       }
     },
     "extra": {
       "laravel": {
         "providers": [
-          "DanielGarcia\\package_user\\package-user-laravel\\PackageProvider"
+          "Danielgarcia\\package_user\\package-user-laravel\\PackageProvider"
         ]
       }
     },

@@ -1,6 +1,6 @@
 <?php
 
-namespace DanielGarcia\PackageUser;
+namespace Danielgarcia\PackageUser;
 
 use Illuminate\Support\ServiceProvider;
 

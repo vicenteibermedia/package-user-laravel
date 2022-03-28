@@ -1,6 +1,7 @@
 <?php
 
-namespace App\Http\Controllers;
+//namespace App\Http\Controllers;
+namespace DanielGarcia\PackageUser;
 // Clases laravel
 use View;
 use Auth;
@@ -13,6 +14,7 @@ use SmtpTransport;
 use Swift_Mailer;
 use Mail;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 
 /**

@@ -12,7 +12,7 @@
 
     "autoload": {
       "psr-4": {
-        "DanielGarcia\\PackageUser\\PackageUserLaravel\\": "package_user/package-user-laravel/src/"
+        "DanielGarcia\\PackageUser\\PackageUserLaravel\\": "src/"
       }
     },
     "extra": {

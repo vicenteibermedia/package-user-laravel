@@ -18,7 +18,7 @@
     "extra": {
       "laravel": {
         "providers": [
-          "DanielGarcia\\PackageUser\\PackageUserLaravel\\PackageProvider"
+          "DanielGarcia\\package_user\\package-user-laravel\\PackageProvider"
         ]
       }
     },

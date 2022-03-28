@@ -1,7 +1,7 @@
 <?php
 
 //namespace App\Http\Controllers;
-namespace DanielGarcia\PackageUser;
+namespace Danielgarcia\PackageUser;
 // Clases laravel
 use View;
 use Auth;

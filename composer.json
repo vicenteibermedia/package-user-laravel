@@ -1,7 +1,7 @@
 {
     "name": "danielgarcia/package-user",
     "description": "Package users",
-    "type": "library",
+    "type": "project",
     "license": "MIT",
     "authors": [
       {

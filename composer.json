@@ -12,13 +12,18 @@
 
     "autoload": {
       "psr-4": {
-        "Danielgarcia\\PackageUser\\PackageUserLaravel\\": "src/"
+        "App\\": "app/",
+        "Danielgarcia\\PackageUserLaravel\\": "package_user/package-user-laravel/src"
       }
     },
+    "classmap": [
+      "database/seeds",
+      "database/factories"
+    ]
     "extra": {
       "laravel": {
         "providers": [
-          "Danielgarcia\\package_user\\package-user-laravel\\PackageProvider"
+          "DanielGarcia\\package_user\\package-user-laravel\\PackageProvider"
         ]
       }
     },

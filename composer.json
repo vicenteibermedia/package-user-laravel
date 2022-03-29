@@ -15,11 +15,12 @@
         "App\\": "app/",
         "Danielgarcia\\PackageUserLaravel\\": "package_user/package-user-laravel/src"
       }
+      "classmap": [
+        "database/seeds",
+        "database/factories"
+      ]
     },
-    "classmap": [
-      "database/seeds",
-      "database/factories"
-    ]
+
     "extra": {
       "laravel": {
         "providers": [

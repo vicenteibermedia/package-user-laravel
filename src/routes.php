@@ -1,5 +1,12 @@
 <?php
 
-Route::get('/usuarios/list', 'App\Http\Controllers\UsuariosController@verUsuarios');
+Route::get('/', function () {
+    return view('layouts.main');
+});
+
+Route::get('/usuarios/list', function(){
+  return view('usuarios.list');
+});
+
 
  ?>

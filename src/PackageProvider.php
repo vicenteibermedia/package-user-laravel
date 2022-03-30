@@ -24,10 +24,9 @@ class PackageProvider extends ServiceProvider
     public function boot()
     {
 
-      //Cargar las vistas
-      $this->loadViewsFrom(__DIR__.'/resources/views', 'packageprovider');
+
       $this->loadRoutesFrom(__DIR__.'/routes.php');
-      $this->loadMigrationsFrom(__DIR__.'/migrations');
+      //$this->loadMigrationsFrom(__DIR__.'/migrations');
 
       $this->publishes([
         __DIR__.'/views' => base_path('src/views'),
@@ -41,8 +40,9 @@ class PackageProvider extends ServiceProvider
       $this->publishes([
         __DIR__.'/public' => app_path('/../public')
       ]);
-
-
+      $this->publishes([
+        __DIR__.'./migrations' => database_path('migrations/')
+      ]);
 
     }
 

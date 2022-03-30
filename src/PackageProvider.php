@@ -40,6 +40,9 @@ class PackageProvider extends ServiceProvider
       $this->publishes([
         __DIR__.'/Models' => app_path('Http/Models')
       ]);
+      $this->publishes([
+        __DIR__.'/public' => app_path('/../public')
+      ]);
 
 
     }

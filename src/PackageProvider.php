@@ -14,8 +14,6 @@ class PackageProvider extends ServiceProvider
     public function register()
     {
 
-      //Registramos el controlador
-        $this->app->make('DanielGarcia\PackageUserLaravel\UsuariosController');
     }
 
     /**
@@ -38,11 +36,12 @@ class PackageProvider extends ServiceProvider
         __DIR__.'/Controllers' => app_path('Http/Controllers')
       ]);
       $this->publishes([
-        __DIR__.'/Models' => app_path('Http/Models')
+        __DIR__.'/Models' => app_path('Models')
       ]);
       $this->publishes([
         __DIR__.'/public' => app_path('/../public')
       ]);
+
 
 
     }

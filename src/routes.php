@@ -8,5 +8,4 @@ Route::get('/usuarios/list', function(){
   return view('usuarios.list');
 });
 
-
  ?>

@@ -60,7 +60,7 @@
             </div>
 
               <div class="card-body">
-                <div id="lista_usuarios_lista">
+                <div id="list_usuarios_list">
                     @include('usuarios.lista_usuarios')
                 </div>
 
@@ -83,7 +83,7 @@
       success: function(result) {
         var json = JSON.parse(result);
         var vista_html = decodeURIComponent(json.activo_cambiado_usuarios).replace(/\+/g, ' ');
-        $('#lista_usuarios_lista').html(vista_html)
+        $('#list_usuarios_list').html(vista_html)
       }
     });
   });

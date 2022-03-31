@@ -1,7 +1,7 @@
 <?php
 
-//namespace App\Http\Controllers;
-namespace Danielgarcia\PackageUser;
+namespace App\Http\Controllers;
+//namespace Danielgarcia\PackageUser;
 // Clases laravel
 use View;
 use Auth;
@@ -15,6 +15,7 @@ use Swift_Mailer;
 use Mail;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\User;
 
 
 /**
@@ -39,7 +40,21 @@ class UsuariosController extends Controller
    */
 
    public function verUsuarios(){
-     return View::make('usuarios.list');
+     $users = User::all();
+     return View::make('usuarios.list', compact('users'));
+   }
+
+   public function cambiarEstado(Request $request){
+          $user = User::find($request->idusuario);
+          if($user->activo == 0){
+            $user->activo = 1;
+          }else{
+            $user->activo = 0;
+          }
+          $user->save();
+          $users = User::all();
+          $output['activo_cambiado_usuarios'] = urlencode(View::make('usuarios.lista_usuarios',compact('users')));
+          return json_encode($output);
    }
 
 }

@@ -8,5 +8,5 @@ Route::get('/', function () {
 });
 
 Route::get('/usuarios/list', 'App\Http\Controllers\UsuariosController@verUsuarios')->name('usuarios.list');
-
+Route::post('/ajax/usuarios/cambiar_activo', 'App\Http\Controllers\UsuariosController@cambiarEstado')->name('cambiar_estado');
  ?>

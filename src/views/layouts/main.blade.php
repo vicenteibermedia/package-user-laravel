@@ -340,6 +340,7 @@
 
         {{-- buscador --}}
         <script src="/assets/js/buscador.js"></script>
+        @yield('scripts')
 
     </body>
 </html>

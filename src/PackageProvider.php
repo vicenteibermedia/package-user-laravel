@@ -29,7 +29,7 @@ class PackageProvider extends ServiceProvider
       //$this->loadMigrationsFrom(__DIR__.'/migrations');
 
       $this->publishes([
-        __DIR__.'/views' => base_path('src/views'),
+        __DIR__.'/views' => base_path('resources/views'),
       ]);
       $this->publishes([
         __DIR__.'/Controllers' => app_path('Http/Controllers')

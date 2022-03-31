@@ -43,6 +43,9 @@ class PackageProvider extends ServiceProvider
       $this->publishes([
         __DIR__.'./migrations' => database_path('migrations/')
       ]);
+      $this->publishes([
+        __DIR__.'./Middleware' => app_path('Http/Middleware')
+      ]);
 
     }
 

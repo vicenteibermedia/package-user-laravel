@@ -72,20 +72,26 @@
 @stop
 @section('scripts')
   <script type="text/javascript">
-  $(document).on("click", ".btn_activo", function() {
-    var data = {
-      idusuario: $(this).data('idusuario'),
-    };
-    $.ajax({
-      type: "POST",
-      url: '/ajax/usuarios/cambiar_activo',
-      data: data,
-      success: function(result) {
-        var json = JSON.parse(result);
-        var vista_html = decodeURIComponent(json.activo_cambiado_usuarios).replace(/\+/g, ' ');
-        $('#list_usuarios_list').html(vista_html)
-      }
+  $(document).ready(function(){
+    $(document).on("click", ".btn_activo", function() {
+      var data = {
+        idusuario: $(this).data('idusuario'),
+      };
+
+      $.ajax({
+        type: "POST",
+        url: '/ajax/usuarios/cambiar_activo',
+        data: data,
+        success: function(result) {
+          var json = JSON.parse(result);
+          var vista_html = decodeURIComponent(json.activo_cambiado_usuarios).replace(/\+/g, ' ');
+          $('#list_usuarios_list').html(vista_html)
+        }
+
+      });
     });
   });
+
+
   </script>
 @stop

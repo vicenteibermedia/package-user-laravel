@@ -40,4 +40,12 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function UsuarioDepartamento(){
+      return $this->belongsTo(Departamento::class,'department_id');
+    }
+
+    public function UsuarioTipo(){
+      return $this->belongsTo(TipoUsuario::class,'role_id');
+    }
 }

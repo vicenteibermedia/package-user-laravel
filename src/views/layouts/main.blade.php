@@ -249,11 +249,37 @@
                     <ul class="mainnav__menu nav flex-column">
 
                       <!-- Regular menu link -->
-                      <li class="nav-item">
-                          <a href="/usuarios/list" class="nav-link mininav-toggle"><i class="demo-pli-male fs-5 me-2"></i>
-                              <span class="nav-label mininav-content ms-1">Usuarios</span>
+                      <li class="nav-item  has-sub">
+                          <a class="mininav-toggle nav-link">
+                            <i class="demo-pli-male fs-5 me-2"></i>
+                              <span class="nav-label ms-1">Usuarios</span>
                           </a>
+                          <ul class="mininav-content nav collapse">
+                            <li class="nav-item">
+                              <a href="/usuarios/list" class="nav-link mininav-toggle">
+                                Listado
+                              </a>
+                              </li>
+                            <li class="nav-item  has-sub">
+                              <a class="nav-link mininav-toggle ">
+                                Auxiliares
+                              </a>
+                                  <ul class="mininav-content nav collapse">
+                                        <li class="nav-item ">
+                                          <a href="/usuarios/departamentos" class="nav-link">
+                                              Departamentos
+                                          </a>
+                                        </li>
+                                        <li class="nav-item">
+                                          <a href="/usuarios/tipos" class="nav-link">
+                                            Tipo de Usuarios
+                                          </a>
+                                        </li>
+                                      </ul>
+                            </li>
+                          </ul>
                       </li>
+
                       <!-- END : Regular menu link -->
 
                       <!-- Regular menu link -->
@@ -341,6 +367,7 @@
         {{-- buscador --}}
         <script src="/assets/js/buscador.js"></script>
         @yield('scripts')
+
 
     </body>
 </html>

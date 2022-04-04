@@ -73,18 +73,30 @@
 @section('scripts')
   <script type="text/javascript">
   $(document).ready(function(){
+    const Toast = Swal.mixin({
+    toast: true,
+    position: 'top-end',
+    showConfirmButton: false,
+    timer: 3000,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+      toast.addEventListener('mouseenter', Swal.stopTimer)
+      toast.addEventListener('mouseleave', Swal.resumeTimer)
+    }
+  })
     $(document).on('click', '.btn_borrar_departamento', function(e){
       e.preventDefault()
       let data = {
         iddepartamento: $(this).data('iddepartamento')
       };
-      swal({
+      Swal.fire({
         title: '¿Desea eliminar este departamento?',
         text: 'Una vez eliminado no podrás recuperarlo',
         icon: 'warning',
-        buttons: ["Cancelar", "Borrar"],
-      }).then(function(value){
-        if (value) {
+        showCloseButton: true,
+        showCancelButton: true,
+      }).then(function(result){
+        if (result.isConfirmed) {
           $.ajax({
             type: "POST",
             url: '/ajax/usuarios/delete_departamento',

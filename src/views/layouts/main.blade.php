@@ -360,7 +360,6 @@
         {{-- <script src="/assets/pages/dashboard-1.js" defer></script> --}}
 
         <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
         <script src="https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js"></script>
         <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.2.0/leaflet-omnivore.min.js'></script>
 

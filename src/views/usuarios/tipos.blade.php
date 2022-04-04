@@ -72,19 +72,31 @@
 @stop
 @section('scripts')
   <script type="text/javascript">
+  const Toast = Swal.mixin({
+  toast: true,
+  position: 'top-end',
+  showConfirmButton: false,
+  timer: 3000,
+  timerProgressBar: true,
+  didOpen: (toast) => {
+    toast.addEventListener('mouseenter', Swal.stopTimer)
+    toast.addEventListener('mouseleave', Swal.resumeTimer)
+  }
+})
   $(document).ready(function(){
     $(document).on('click', '.btn_borrar_tipo', function(e){
       e.preventDefault()
       let data = {
         idtipo: $(this).data('idtipo')
       };
-      swal({
+      Swal.fire({
         title: '¿Desea eliminar este tipo de usuario?',
         text: 'Una vez eliminado no podrás recuperarlo',
         icon: 'warning',
-        buttons: ["Cancelar", "Borrar"],
-      }).then(function(value){
-        if (value) {
+        showCloseButton: true,
+        showCancelButton: true,
+      }).then(function(result){
+        if (result.isConfirmed) {
           $.ajax({
             type: "POST",
             url: '/ajax/usuarios/delete_tipo',

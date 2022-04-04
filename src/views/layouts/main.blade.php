@@ -366,6 +366,7 @@
         {{-- buscador --}}
         <script src="/assets/js/buscador.js"></script>
         @yield('scripts')
+        @include('layouts.notifications')
 
 
     </body>

@@ -27,8 +27,8 @@
                <td style="text-align:center;vertical-align: middle;">{{$user->email}}</td>
                <td style="text-align:center;vertical-align: middle;">{{$user->cod}}</td>
                <td style="text-align:center;vertical-align: middle;">
-               @if($user->Permiso)
-                    <span class="label label-blue " style="float:center; cursor:pointer;">{{$user->Permiso->name}}</span>
+               @if($user->UsuarioTipo)
+                    <span class="label label-blue " style="float:center; cursor:pointer;">{{$user->UsuarioTipo->user_type}}</span>
                @else
                     <span class="label label-danger " style="float:center; cursor:pointer;">Sin Permisos</span>
                @endif </td>

@@ -3,7 +3,7 @@
 
   <div class="content__header content__boxed overlapping">
       <div class="content__wrap">
-          <h1 class="page-title mb-2">Usuarios</h1>
+          <h1 class="page-title mb-2">Tipos de Usuario</h1>
           {{-- <h2 class="h5">Welcome back to the Dashboard.</h2>
           <p>Scroll down to see quick links and overviews of your Server, To do list<br> Order status or get some Help using Nifty.</p> --}}
           <!-- END : Page title and information -->
@@ -47,10 +47,10 @@
 
                     <!-- Right Toolbar -->
                     <div class="col-md-6 d-flex gap-1 align-items-center justify-content-md-end mb-3">
-                        <a href="/usuarios/new_usuario" class="btn btn-primary hstack gap-2 align-self-center btn_new_user">
+                        <a href="/usuarios/new_tipo" class="btn btn-primary hstack gap-2 align-self-center btn_create_contrata">
                             <i class="demo-psi-add fs-5"></i>
                             <span class="vr"></span>
-                            Añadir usuario
+                            Añadir Tipo
                         </a>
                     </div>
 
@@ -60,8 +60,8 @@
             </div>
 
               <div class="card-body">
-                <div id="list_usuarios_list">
-                    @include('usuarios.lista_usuarios')
+                <div id="list_tipos_list">
+                    @include('usuarios.lista_tipos')
                 </div>
 
               </div>
@@ -73,13 +73,13 @@
 @section('scripts')
   <script type="text/javascript">
   $(document).ready(function(){
-    $(document).on('click', '.btn_borrar_usuario', function(e){
+    $(document).on('click', '.btn_borrar_tipo', function(e){
       e.preventDefault()
       let data = {
-        iduser: $(this).data('idusuario')
+        idtipo: $(this).data('idtipo')
       };
       swal({
-        title: '¿Desea eliminar este usuario?',
+        title: '¿Desea eliminar este tipo de usuario?',
         text: 'Una vez eliminado no podrás recuperarlo',
         icon: 'warning',
         buttons: ["Cancelar", "Borrar"],
@@ -87,40 +87,21 @@
         if (value) {
           $.ajax({
             type: "POST",
-            url: '/ajax/usuarios/delete_usuarios',
+            url: '/ajax/usuarios/delete_tipo',
             data: data,
             success: function(result) {
               var json = JSON.parse(result);
-              var vista_html = decodeURIComponent(json.vista_usuarios).replace(/\+/g,' ');
-              $("#list_usuarios_list").html(vista_html);
+              var vista_html = decodeURIComponent(json.vista_tipos).replace(/\+/g,' ');
+              $("#list_tipos_list").html(vista_html);
               Toast.fire({
                 position: 'top',
                 icon: 'success',
-                title:  '¡Usuario borrado correctamente!',
+                title:  '¡Tipo borrado correctamente!',
                 showConfirmButton: false,
               });
             }
           });
         }
-      });
-    });
-
-
-    $(document).on("click", ".btn_activo", function() {
-      var data = {
-        idusuario: $(this).data('idusuario'),
-      };
-
-      $.ajax({
-        type: "POST",
-        url: '/ajax/usuarios/cambiar_activo',
-        data: data,
-        success: function(result) {
-          var json = JSON.parse(result);
-          var vista_html = decodeURIComponent(json.activo_cambiado_usuarios).replace(/\+/g, ' ');
-          $('#list_usuarios_list').html(vista_html)
-        }
-
       });
     });
   });

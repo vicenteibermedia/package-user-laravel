@@ -254,7 +254,7 @@
                             <i class="demo-pli-male fs-5 me-2"></i>
                               <span class="nav-label ms-1">Usuarios</span>
                           </a>
-                          <ul class="mininav-content nav collapse">
+                          <ul class="mininav-content nav collapse show">
                             <li class="nav-item">
                               <a href="/usuarios/list" class="nav-link mininav-toggle">
                                 Listado
@@ -264,7 +264,7 @@
                               <a class="nav-link mininav-toggle ">
                                 Auxiliares
                               </a>
-                                  <ul class="mininav-content nav collapse">
+                                  <ul class="mininav-content nav collapse show">
                                         <li class="nav-item ">
                                           <a href="/usuarios/departamentos" class="nav-link">
                                               Departamentos

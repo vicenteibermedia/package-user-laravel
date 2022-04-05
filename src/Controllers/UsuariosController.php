@@ -39,7 +39,6 @@ class UsuariosController extends Controller
    *
    * @return \Illuminate\Contracts\Support\Renderable
    */
-
    public function verUsuarios(){
      $users = User::all();
      return View::make('usuarios.list', compact('users'));
@@ -160,8 +159,8 @@ class UsuariosController extends Controller
    public function deleteTipo(Request $request){
      $tipo = TipoUsuario::find($request->idtipo);
      $tipo->delete();
-     $tipos = TipoUsuario::all();
-     $output['vista_tipos'] = urlencode(View::make('usuarios.lista_tipos', compact('tipos')));
+     $tiposusuario = TipoUsuario::all();
+     $output['vista_tipos'] = urlencode(View::make('usuarios.lista_tipos', compact('tiposusuario')));
      return json_encode($output);
    }
 

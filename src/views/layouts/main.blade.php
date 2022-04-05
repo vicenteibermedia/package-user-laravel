@@ -46,7 +46,6 @@
 
             @yield('content')
 
-
               <!-- FOOTER -->
               <footer class="content__boxed mt-auto">
                   <div class="content__wrap py-3 py-md-1 d-flex flex-column flex-md-row align-items-md-center">
@@ -82,7 +81,9 @@
 
                 <!-- Content Header - Left Side: -->
                 <div class="header__content-start">
-
+                  <button type="button" class="nav-toggler header__btn btn btn-icon btn-sm" aria-label="Nav Toggler">
+                            <i class="demo-psi-view-list"></i>
+                        </button>
                 </div>
                 <div class="header__content-end">
 
@@ -244,27 +245,27 @@
                 </div>
                 <!-- End - Profile widget -->
                 <!-- Navigation Category -->
-                <div class="mainnav__categoriy py-1">
+                <div class="mainnav__categoriy py-3">
                     <h6 class="mainnav__caption mt-0 px-3 fw-bold">Categoria 1</h6>
                     <ul class="mainnav__menu nav flex-column">
 
                       <!-- Regular menu link -->
-                      <li class="nav-item  has-sub">
-                          <a class="mininav-toggle nav-link">
+                      <li class="nav-item has-sub">
+                          <a class="mininav-toggle nav-link collapsed">
                             <i class="demo-pli-male fs-5 me-2"></i>
                               <span class="nav-label ms-1">Usuarios</span>
                           </a>
-                          <ul class="mininav-content nav collapse show">
+                          <ul class="mininav-content nav collapse">
                             <li class="nav-item">
-                              <a href="/usuarios/list" class="nav-link mininav-toggle">
+                              <a href="/usuarios/list" class="nav-link">
                                 Listado
                               </a>
                               </li>
-                            <li class="nav-item  has-sub">
-                              <a class="nav-link mininav-toggle ">
+                            <li class="nav-item has-sub">
+                              <a class="mininav-toggle nav-link collapsed">
                                 Auxiliares
                               </a>
-                                  <ul class="mininav-content nav collapse show">
+                                  <ul class="mininav-content nav collapse">
                                         <li class="nav-item ">
                                           <a href="/usuarios/departamentos" class="nav-link">
                                               Departamentos
@@ -280,13 +281,14 @@
                           </ul>
                       </li>
 
+
                       <!-- END : Regular menu link -->
 
                       <!-- Regular menu link -->
                       <li class="nav-item">
                           <a href="" class="nav-link mininav-toggle"><i class="demo-pli-folder fs-5 me-2"></i>
 
-                              <span class="nav-label mininav-content ms-1">Expedientes</span>
+                              <span class="nav-label mininav-content ms-1">Clientes</span>
                           </a>
                       </li>
                       <!-- END : Regular menu link -->

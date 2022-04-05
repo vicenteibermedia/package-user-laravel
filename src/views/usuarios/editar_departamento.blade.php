@@ -24,7 +24,7 @@
                                             @csrf
                                             <input type="hidden" name="departamentoid" value="{{$departamento->id}}">
                                             <input type="text" class="form-control mb-2" placeholder="Nombre" value="{{ $departamento->department_name }}"  name="nombre" autocomplete="off" required/>
-                                            <button type="submit" class="btn btn-success ver_detalles mt-3">Nuevo Departamento <i class="fas fa-pencil-alt"></i>
+                                            <button type="submit" class="btn btn-success ver_detalles mt-3">Editar Departamento <i class="fas fa-pencil-alt"></i>
                                             </button>
                                           </form>
                                         </div>

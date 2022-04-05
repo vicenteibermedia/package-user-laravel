@@ -37,7 +37,7 @@
                                                   @endforeach </select>
                                               </div>
                                             </div>
-                                            <button type="submit" class="btn btn-success ver_detalles mt-3">Nuevo Usuario <i class="fas fa-pencil-alt"></i>
+                                            <button type="submit" class="btn btn-success ver_detalles mt-3">Editar Usuario <i class="fas fa-pencil-alt"></i>
                                             </button>
                                           </form>
                                         </div>

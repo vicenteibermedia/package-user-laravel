@@ -116,7 +116,13 @@
         }
       });
     });
+    $(document).on('click', '.usuario_imagen_subir_2', function(){
+      $('#profile-image-upload_'+$(this).attr('id')).click();
+    });
 
+    $(document).on('change', '.upload_imagen', function(){
+      $('#subirImagenUsuario_'+$(this).data('id')).submit();
+    });
 
     $(document).on("click", ".btn_activo", function() {
       var data = {

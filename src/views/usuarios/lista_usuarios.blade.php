@@ -1,3 +1,4 @@
+
 <div class="row">
   <div class="col-12">
     <div class="panel panel-innverse" data-sortable-id="table-basic-7">
@@ -18,10 +19,12 @@
             <tbody>
             @foreach($users as $user) <tr>
                <td class="with-img" style="text-align:center;">
-                 <form action="/usuarios/subir_imagen_usuario" method="POST" style="display: none" id="subirImagenUsuario_{{ $user->id }}" enctype="multipart/form-data"> @csrf <input id="profile-image-upload_{{ $user->id }}" data-id="{{ $user->id }}" class="hidden upload_imagen" type="file" name="image">
-                   <input type="hidden" name="usuario" value="{{ $user->id }}">
+                 <form action="/usuarios/subir_imagen_usuario" method="POST" style="display: none" id="subirImagenUsuario_{{ $user->id }}" enctype="multipart/form-data">
+                    @csrf
+                    <input id="profile-image-upload_{{ $user->id }}" data-id="{{ $user->id }}" class="hidden upload_imagen" type="file" name="image">
+                   <input type="hidden" name="user" value="{{ $user->id }}">
                  </form>
-                 <img width="50" id="{{ $user->id }}" @if(!$user->ruta_imagen_usuario) src="../assets/img/user/user-1.jpg" @else src="/img/usuarios/{{ str_replace(' ','', $user->name) }}.png" @endif class="img-rounded height-30 usuario_imagen_subir_2">
+                 <img width="50" id="{{ $user->id }}" @if(!$user->ruta_imagen_usuario) src="../assets/img/user/user-1.jpg" @else src="/assets/img/profile-photos/{{ str_replace(' ','', $user->name) }}.png" @endif class="img-rounded height-30 usuario_imagen_subir_2">
                </td>
                <td style="text-align:center;vertical-align: middle;">{{$user->name}}</td>
                <td style="text-align:center;vertical-align: middle;">{{$user->email}}</td>

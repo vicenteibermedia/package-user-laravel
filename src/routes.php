@@ -50,5 +50,8 @@ Route::get('/usuarios/editarTipo/{id}', 'App\Http\Controllers\UsuariosController
 Route::post('/usuarios/editar/doedittipo', 'App\Http\Controllers\UsuariosController@do_editarTipo')->name('do_editar_tipo');
 Route::post('/ajax/usuarios/delete_tipo', 'App\Http\Controllers\UsuariosController@deleteTipo')->name('delete_tipo');
 
+//Imagenes
+Route::post('/usuarios/subir_imagen_usuario', 'App\Http\Controllers\UsuariosController@subirImagenUsuario')->name('usuarios.subir_imagen');
+
 
 Route::post('/ajax/usuarios/cambiar_activo', 'App\Http\Controllers\UsuariosController@cambiarEstado')->name('cambiar_estado');

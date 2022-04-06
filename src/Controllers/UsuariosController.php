@@ -39,6 +39,7 @@ class UsuariosController extends Controller
    *
    * @return \Illuminate\Contracts\Support\Renderable
    */
+
    public function verUsuarios(){
      $users = User::all();
      return View::make('usuarios.list', compact('users'));
@@ -99,6 +100,19 @@ class UsuariosController extends Controller
      $user_edit->role_id = $request->tipos;
      $user_edit->save();
      return redirect()->route('usuarios.list')->with('success', '¡Usuario editado correctamente!');
+   }
+
+   public function subirImagenUsuario(Request $request){
+     $request->validate([
+       'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+     ]);
+     $user = User::find($request->user);
+     $extension = $request->image->extension();
+     $request->image->move(public_path('assets/img/profile-photos/'), str_replace(' ','',$user->name).'.png');
+     $user->ruta_imagen_usuario = 'assets/img/profile-photos/'.str_replace(' ', '', $user->name).'.png';
+     $user->save();
+
+     return redirect()->route('usuarios.list');
    }
 
 
